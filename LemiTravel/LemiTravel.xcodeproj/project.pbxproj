@@ -14,6 +14,8 @@
 		4529F5E3229C408B001AE1D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4529F5E1229C408B001AE1D7 /* LaunchScreen.storyboard */; };
 		4529F5EE229C408B001AE1D7 /* LemiTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529F5ED229C408B001AE1D7 /* LemiTravelTests.swift */; };
 		4529F5F9229C408B001AE1D7 /* LemiTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529F5F8229C408B001AE1D7 /* LemiTravelUITests.swift */; };
+		5E09775E797687FCF41E4B80 /* Pods_LemiTravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E4BBBE61D17516FDE364AC /* Pods_LemiTravelTests.framework */; };
+		9B630ED5C4B43E8C6A90DF2C /* Pods_LemiTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5980DF5D8A19AFBAB010209 /* Pods_LemiTravel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,12 @@
 		4529F5F4229C408B001AE1D7 /* LemiTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemiTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4529F5F8229C408B001AE1D7 /* LemiTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemiTravelUITests.swift; sourceTree = "<group>"; };
 		4529F5FA229C408B001AE1D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A93663A1E8345936B72D6FF /* Pods-LemiTravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemiTravelTests.release.xcconfig"; path = "Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests.release.xcconfig"; sourceTree = "<group>"; };
+		B48B09DC9888DF50A1333A7D /* Pods-LemiTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemiTravelTests.debug.xcconfig"; path = "Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5980DF5D8A19AFBAB010209 /* Pods_LemiTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemiTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E4BBBE61D17516FDE364AC /* Pods_LemiTravelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemiTravelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEDACB9A50BF4860395568BA /* Pods-LemiTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemiTravel.release.xcconfig"; path = "Target Support Files/Pods-LemiTravel/Pods-LemiTravel.release.xcconfig"; sourceTree = "<group>"; };
+		FED52DF604D9114644201CB4 /* Pods-LemiTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemiTravel.debug.xcconfig"; path = "Target Support Files/Pods-LemiTravel/Pods-LemiTravel.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B630ED5C4B43E8C6A90DF2C /* Pods_LemiTravel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E09775E797687FCF41E4B80 /* Pods_LemiTravelTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +84,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09DE5B3B24F03CCA9F87591B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FED52DF604D9114644201CB4 /* Pods-LemiTravel.debug.xcconfig */,
+				DEDACB9A50BF4860395568BA /* Pods-LemiTravel.release.xcconfig */,
+				B48B09DC9888DF50A1333A7D /* Pods-LemiTravelTests.debug.xcconfig */,
+				6A93663A1E8345936B72D6FF /* Pods-LemiTravelTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4529F5CC229C408A001AE1D7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				4529F5EC229C408B001AE1D7 /* LemiTravelTests */,
 				4529F5F7229C408B001AE1D7 /* LemiTravelUITests */,
 				4529F5D6229C408A001AE1D7 /* Products */,
+				09DE5B3B24F03CCA9F87591B /* Pods */,
+				C9CFD247150046D068F50B70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +149,15 @@
 			path = LemiTravelUITests;
 			sourceTree = "<group>";
 		};
+		C9CFD247150046D068F50B70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5980DF5D8A19AFBAB010209 /* Pods_LemiTravel.framework */,
+				D0E4BBBE61D17516FDE364AC /* Pods_LemiTravelTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4529F5FD229C408B001AE1D7 /* Build configuration list for PBXNativeTarget "LemiTravel" */;
 			buildPhases = (
+				CF7612C2E55EF4E51A82AFDD /* [CP] Check Pods Manifest.lock */,
 				4529F5D1229C408A001AE1D7 /* Sources */,
 				4529F5D2229C408A001AE1D7 /* Frameworks */,
 				4529F5D3229C408A001AE1D7 /* Resources */,
+				9E3E2BA29731225A9C3CDFC2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4529F600229C408B001AE1D7 /* Build configuration list for PBXNativeTarget "LemiTravelTests" */;
 			buildPhases = (
+				65782B1A6676D5FEA9E2EE9D /* [CP] Check Pods Manifest.lock */,
 				4529F5E5229C408B001AE1D7 /* Sources */,
 				4529F5E6229C408B001AE1D7 /* Frameworks */,
 				4529F5E7229C408B001AE1D7 /* Resources */,
+				C87DF25A8BB3F4D163477590 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +287,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65782B1A6676D5FEA9E2EE9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LemiTravelTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E3E2BA29731225A9C3CDFC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LemiTravel/Pods-LemiTravel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LemiTravel/Pods-LemiTravel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LemiTravel/Pods-LemiTravel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C87DF25A8BB3F4D163477590 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF7612C2E55EF4E51A82AFDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LemiTravel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4529F5D1229C408A001AE1D7 /* Sources */ = {
@@ -430,6 +548,7 @@
 		};
 		4529F5FE229C408B001AE1D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FED52DF604D9114644201CB4 /* Pods-LemiTravel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +567,7 @@
 		};
 		4529F5FF229C408B001AE1D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEDACB9A50BF4860395568BA /* Pods-LemiTravel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +586,7 @@
 		};
 		4529F601229C408B001AE1D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B48B09DC9888DF50A1333A7D /* Pods-LemiTravelTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +608,7 @@
 		};
 		4529F602229C408B001AE1D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A93663A1E8345936B72D6FF /* Pods-LemiTravelTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
