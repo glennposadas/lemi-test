@@ -29,6 +29,14 @@ class BaseViewController: UIViewController {
         return button
     }()
     
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.backgroundColor = .clear
+        tableView.estimatedRowHeight = 200.0
+        tableView.rowHeight = UITableView.automaticDimension
+        return tableView
+    }()
+    
     private lazy var view_InternetObserverToast: UIView = {
         let view = UIView.new(backgroundColor: UIColor.colorWithRGBHex(0xc0392b))
         view.tag = 9911
@@ -143,6 +151,15 @@ class BaseViewController: UIViewController {
         }
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        
+        // Register cells
+        self.tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
+        
+        let transluscentView = UIView()
+        transluscentView.backgroundColor = .clear
+        
+        self.tableView.tableHeaderView = transluscentView
+        self.tableView.tableFooterView = transluscentView
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -17,33 +17,18 @@ class HomeViewController: BaseViewController {
     private var viewModel: HomeViewModel!
     private let disposeBag = DisposeBag()
     
-    private lazy var button_SelectCity: UIButton = {
-        return UIButton.new(
-            withIcon: UIImage(named: "ic_select_city"),
-            title: "Tap to select a city".localized(),
-            normalTextColor: .black,
-            highlightedTextColor: .darkGray,
-            backgroundColor: .white,
-            horizontalAlignment: .leading
-        )
-    }()
-    
     // MARK: - Functions
     
     private func setupBindings() {
-        weak var weakSelf = self
-        
-        self.button_SelectCity.rx.tap.subscribe { _ in
-            weakSelf?.viewModel.selectCity()
-        }.disposed(by: self.disposeBag)
+        self.tableView.delegate = self.viewModel
+        self.tableView.dataSource = self.viewModel
     }
     
     private func setupUI() {
-        self.view.addSubview(self.button_SelectCity)
-        self.button_SelectCity.snp.makeConstraints {
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(44.0)
-            $0.leading.trailing.equalToSuperview().inset(16.0)
-            $0.height.equalTo(50.0)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
 
     }
@@ -66,5 +51,9 @@ extension HomeViewController: HomeDelegate {
     func showCityList() {
         let cityListController = CityListViewController()
         self.navigationController?.pushViewController(cityListController, animated: true)
+    }
+    
+    func reloadData() {
+        self.tableView.reloadData()
     }
 }

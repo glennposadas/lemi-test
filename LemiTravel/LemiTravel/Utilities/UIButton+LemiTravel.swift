@@ -1,5 +1,5 @@
 //
-//  UIButton+LalaFood.swift
+//  UITableViewCell+LemiTravel.swift
 //  LemiTravel
 //
 //  Created by Glenn Von C. Posadas on 28/05/2019.

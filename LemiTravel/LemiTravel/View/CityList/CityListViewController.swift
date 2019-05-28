@@ -12,15 +12,13 @@ class CityListViewController: BaseViewController {
 
     // MARK: - Properties
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
-        tableView.backgroundColor = .clear
-        tableView.estimatedRowHeight = 200.0
-        tableView.rowHeight = UITableView.automaticDimension
-        return tableView
+    private lazy var view_NavBar: UIView = {
+        return UIView.new(backgroundColor: .white)
     }()
     
-    
+    private lazy var view_NavBarSeparator: UIView = {
+        return UIView.new(backgroundColor: .lightGray)
+    }()
     
     // MARK: - Functions
     
@@ -29,6 +27,8 @@ class CityListViewController: BaseViewController {
     }
     
     private func setupUI() {
+        //self.view_NavBar.addSubviews(<#T##views: UIView...##UIView#>)
+        
         let backBarButton = UIBarButtonItem(customView: self.button_Back)
         self.button_Back.frame = CGRect(x: 0, y: 0, width: 44.0, height: 44.0)
         self.navigationItem.leftBarButtonItem = backBarButton

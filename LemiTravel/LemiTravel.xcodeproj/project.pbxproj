@@ -19,11 +19,14 @@
 		45461D98229CB1AB00FB4DA6 /* UILabel+LemiTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D97229CB1AB00FB4DA6 /* UILabel+LemiTravel.swift */; };
 		45461D9A229CB2A000FB4DA6 /* UIImageView+LemiTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D99229CB2A000FB4DA6 /* UIImageView+LemiTravel.swift */; };
 		45461D9C229CB38100FB4DA6 /* ConstraintMaker+LemiTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D9B229CB38100FB4DA6 /* ConstraintMaker+LemiTravel.swift */; };
-		45461D9E229D54CF00FB4DA6 /* UIButton+LalaFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D9D229D54CF00FB4DA6 /* UIButton+LalaFood.swift */; };
+		45461D9E229D54CF00FB4DA6 /* UIButton+LemiTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D9D229D54CF00FB4DA6 /* UIButton+LemiTravel.swift */; };
 		45461DA0229D5BB500FB4DA6 /* UIImage+LemiTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461D9F229D5BB500FB4DA6 /* UIImage+LemiTravel.swift */; };
 		45461DA3229D5E5700FB4DA6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461DA2229D5E5700FB4DA6 /* HomeViewModel.swift */; };
 		45461DA7229D5FFE00FB4DA6 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461DA6229D5FFE00FB4DA6 /* CityListViewController.swift */; };
 		45461DAA229D6A4C00FB4DA6 /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461DA9229D6A4C00FB4DA6 /* HomeViewModelSpec.swift */; };
+		45461DAD229D773400FB4DA6 /* UITableViewCell+LemiTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461DAC229D773400FB4DA6 /* UITableViewCell+LemiTravel.swift */; };
+		45461DAF229D7A4100FB4DA6 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461DAE229D7A4100FB4DA6 /* City.swift */; };
+		45461DB2229D7CFD00FB4DA6 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45461DB1229D7CFD00FB4DA6 /* HomeTableViewCell.swift */; };
 		5E09775E797687FCF41E4B80 /* Pods_LemiTravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E4BBBE61D17516FDE364AC /* Pods_LemiTravelTests.framework */; };
 		9B630ED5C4B43E8C6A90DF2C /* Pods_LemiTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5980DF5D8A19AFBAB010209 /* Pods_LemiTravel.framework */; };
 /* End PBXBuildFile section */
@@ -64,12 +67,15 @@
 		45461D97229CB1AB00FB4DA6 /* UILabel+LemiTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LemiTravel.swift"; sourceTree = "<group>"; };
 		45461D99229CB2A000FB4DA6 /* UIImageView+LemiTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LemiTravel.swift"; sourceTree = "<group>"; };
 		45461D9B229CB38100FB4DA6 /* ConstraintMaker+LemiTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintMaker+LemiTravel.swift"; sourceTree = "<group>"; };
-		45461D9D229D54CF00FB4DA6 /* UIButton+LalaFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+LalaFood.swift"; sourceTree = "<group>"; };
+		45461D9D229D54CF00FB4DA6 /* UIButton+LemiTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+LemiTravel.swift"; sourceTree = "<group>"; };
 		45461D9F229D5BB500FB4DA6 /* UIImage+LemiTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LemiTravel.swift"; sourceTree = "<group>"; };
 		45461DA2229D5E5700FB4DA6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		45461DA6229D5FFE00FB4DA6 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		45461DA8229D6A4C00FB4DA6 /* LemiTravelTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LemiTravelTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		45461DA9229D6A4C00FB4DA6 /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
+		45461DAC229D773400FB4DA6 /* UITableViewCell+LemiTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+LemiTravel.swift"; sourceTree = "<group>"; };
+		45461DAE229D7A4100FB4DA6 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		45461DB1229D7CFD00FB4DA6 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		6A93663A1E8345936B72D6FF /* Pods-LemiTravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemiTravelTests.release.xcconfig"; path = "Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests.release.xcconfig"; sourceTree = "<group>"; };
 		B48B09DC9888DF50A1333A7D /* Pods-LemiTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemiTravelTests.debug.xcconfig"; path = "Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5980DF5D8A19AFBAB010209 /* Pods_LemiTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemiTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,12 +181,13 @@
 			children = (
 				45461D90229CAF1C00FB4DA6 /* ReachabilitySwift */,
 				45461D9B229CB38100FB4DA6 /* ConstraintMaker+LemiTravel.swift */,
-				45461D9D229D54CF00FB4DA6 /* UIButton+LalaFood.swift */,
+				45461D9D229D54CF00FB4DA6 /* UIButton+LemiTravel.swift */,
 				45461D93229CB02200FB4DA6 /* UIColor+LemiTravel.swift */,
 				45461D95229CB17F00FB4DA6 /* UIView+LemiTravel.swift */,
 				45461D97229CB1AB00FB4DA6 /* UILabel+LemiTravel.swift */,
 				45461D99229CB2A000FB4DA6 /* UIImageView+LemiTravel.swift */,
 				45461D9F229D5BB500FB4DA6 /* UIImage+LemiTravel.swift */,
+				45461DAC229D773400FB4DA6 /* UITableViewCell+LemiTravel.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 		4529F608229C461A001AE1D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45461DAE229D7A4100FB4DA6 /* City.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 		4529F611229C478A001AE1D7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				45461DB0229D7CEC00FB4DA6 /* Cells */,
 				4529F60E229C4783001AE1D7 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -274,6 +283,14 @@
 				45461DA6229D5FFE00FB4DA6 /* CityListViewController.swift */,
 			);
 			path = CityList;
+			sourceTree = "<group>";
+		};
+		45461DB0229D7CEC00FB4DA6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				45461DB1229D7CFD00FB4DA6 /* HomeTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		C9CFD247150046D068F50B70 /* Frameworks */ = {
@@ -509,11 +526,14 @@
 				45461D98229CB1AB00FB4DA6 /* UILabel+LemiTravel.swift in Sources */,
 				45461D96229CB17F00FB4DA6 /* UIView+LemiTravel.swift in Sources */,
 				45461DA3229D5E5700FB4DA6 /* HomeViewModel.swift in Sources */,
+				45461DAD229D773400FB4DA6 /* UITableViewCell+LemiTravel.swift in Sources */,
 				45461D94229CB02200FB4DA6 /* UIColor+LemiTravel.swift in Sources */,
 				45461DA7229D5FFE00FB4DA6 /* CityListViewController.swift in Sources */,
+				45461DAF229D7A4100FB4DA6 /* City.swift in Sources */,
 				45461D9C229CB38100FB4DA6 /* ConstraintMaker+LemiTravel.swift in Sources */,
 				4529F613229C4799001AE1D7 /* BaseViewController.swift in Sources */,
-				45461D9E229D54CF00FB4DA6 /* UIButton+LalaFood.swift in Sources */,
+				45461DB2229D7CFD00FB4DA6 /* HomeTableViewCell.swift in Sources */,
+				45461D9E229D54CF00FB4DA6 /* UIButton+LemiTravel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
