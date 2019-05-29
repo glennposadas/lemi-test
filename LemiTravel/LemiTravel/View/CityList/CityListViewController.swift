@@ -85,4 +85,8 @@ extension CityListViewController: CityListDelegate {
     func reloadData() {
         self.tableView.reloadData()
     }
+    
+    func goToHome() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

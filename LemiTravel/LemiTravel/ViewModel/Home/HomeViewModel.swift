@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 enum HomeSectionType: Int {
-    case selectCity
+    case selectCity = 0
     case selectedCities
     
     static let count: Int = 2

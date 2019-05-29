@@ -15,6 +15,7 @@ extension UIImageView {
         let image = UIImage(named: imageName ?? "")
         let imageView = UIImageView(image: image)
         imageView.contentMode = contentMode
+        imageView.clipsToBounds = true
         return imageView
     }    
 }

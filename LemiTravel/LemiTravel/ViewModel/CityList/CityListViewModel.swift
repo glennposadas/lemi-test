@@ -14,6 +14,7 @@ import RxSwift
 /// The delegate of the ```CityListViewModel```
 protocol CityListDelegate: class {
     func reloadData()
+    func goToHome()
 }
 
 class CityListViewModel: NSObject {
@@ -31,6 +32,11 @@ class CityListViewModel: NSObject {
         super.init()
         
         self.delegate = cityListController
+        
+        let data = stubbedResponse("Cities")!
+        let newCities = try? JSONDecoder().decode([City].self, from: data)
+        self.cities.accept(newCities!)
+        self.delegate?.reloadData()
     }
 }
 
@@ -43,6 +49,7 @@ extension CityListViewModel: UITableViewDelegate {
         // Select and add city to shared data
         let city = self.cities.value[indexPath.row]
         LTSharedData.selectedCities.accept(LTSharedData.selectedCities.value + [city])
+        self.delegate?.goToHome()
     }
 }
 
@@ -65,17 +72,6 @@ extension CityListViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let homeSectionType = HomeSectionType(rawValue: section) {
-            switch homeSectionType {
-            case .selectCity: return 1
-            case .selectedCities: return self.cities.value.count
-            }
-        }
-        
-        return 0
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return HomeSectionType.count
+        return self.cities.value.count
     }
 }

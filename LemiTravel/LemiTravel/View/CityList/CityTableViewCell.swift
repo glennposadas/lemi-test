@@ -13,7 +13,9 @@ class CityTableViewCell: BaseTableViewCell {
     // MARK: - Properties
     
     private lazy var imageView_Avatar: UIImageView = {
-        return UIImageView.new(withImageName: nil, contentMode: .scaleAspectFill)
+        let imageView =  UIImageView.new(withImageName: nil, contentMode: .scaleAspectFill)
+        imageView.layer.cornerRadius = 20.0
+        return imageView
     }()
     
     private lazy var label_Title: UILabel = {
@@ -27,8 +29,9 @@ class CityTableViewCell: BaseTableViewCell {
     private lazy var stackView_Labels: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.label_Title, self.label_Subtitle])
         stackView.axis = .vertical
-        stackView.spacing = 4.0
+        stackView.spacing = 0
         stackView.alignment = .leading
+        stackView.distribution = .fill
         return stackView
     }()
     
@@ -51,7 +54,7 @@ class CityTableViewCell: BaseTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.removeSeparator()
+        self.extendSeparatorToLeading()
         
         self.addSubviews(
             self.imageView_Avatar,
@@ -59,13 +62,13 @@ class CityTableViewCell: BaseTableViewCell {
         )
         
         self.imageView_Avatar.snp.makeConstraints {
-            $0.width.height.equalTo(30.0)
+            $0.width.height.equalTo(40.0)
             $0.top.leading.bottom.equalToSuperview().inset(16.0)
         }
         
         self.stackView_Labels.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalTo(self.stackView_Labels.snp.trailing).offset(8.0)
+            $0.leading.equalTo(self.imageView_Avatar.snp.trailing).offset(8.0)
             $0.trailing.equalToSuperview().inset(16.0)
         }
         
