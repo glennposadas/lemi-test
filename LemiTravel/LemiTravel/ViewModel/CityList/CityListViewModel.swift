@@ -15,6 +15,7 @@ import RxSwift
 protocol CityListDelegate: class {
     func reloadData()
     func goToHome()
+    func presentAlert(message: String, okayButtonTitle: String)
 }
 
 class CityListViewModel: NSObject {
@@ -23,20 +24,31 @@ class CityListViewModel: NSObject {
     
     weak var delegate: CityListDelegate?
     
+    var isSearching = BehaviorRelay<Bool>(value: true)
     var cities = BehaviorRelay<[City]>(value: [])
     
     // MARK: Functions
+    
+    /// Start searching
+    private func search(_ query: String) {
+        self.isSearching.accept(true)
+        APIManager.SearchCalls.search(query, onSuccess: { (newCities) in
+            self.isSearching.accept(false)
+            if let newCities = newCities {
+                self.cities.accept(newCities)
+                self.delegate?.reloadData()
+            }
+        }, onError: { errorMessage, _, _ in
+            self.delegate?.presentAlert(message: errorMessage, okayButtonTitle: "OK")
+        })
+    }
     
     /// init
     init(cityListController: CityListDelegate) {
         super.init()
         
         self.delegate = cityListController
-        
-        let data = stubbedResponse("Cities")!
-        let newCities = try? JSONDecoder().decode([City].self, from: data)
-        self.cities.accept(newCities!)
-        self.delegate?.reloadData()
+        self.search("")
     }
 }
 

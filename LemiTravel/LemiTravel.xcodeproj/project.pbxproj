@@ -40,6 +40,8 @@
 		457FE556229EC771000D6C52 /* NoBracketsEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FE54F229EC771000D6C52 /* NoBracketsEncoding.swift */; };
 		457FE557229EC771000D6C52 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FE551229EC771000D6C52 /* APIManager.swift */; };
 		457FE55A229EC771000D6C52 /* CustomServerTrustPoliceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FE554229EC771000D6C52 /* CustomServerTrustPoliceManager.swift */; };
+		457FE55C229ECC5B000D6C52 /* APIManager+SearchCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FE55B229ECC5B000D6C52 /* APIManager+SearchCalls.swift */; };
+		457FE55F229ECE57000D6C52 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FE55E229ECE57000D6C52 /* SearchService.swift */; };
 		5E09775E797687FCF41E4B80 /* Pods_LemiTravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E4BBBE61D17516FDE364AC /* Pods_LemiTravelTests.framework */; };
 		9B630ED5C4B43E8C6A90DF2C /* Pods_LemiTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5980DF5D8A19AFBAB010209 /* Pods_LemiTravel.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		457FE54F229EC771000D6C52 /* NoBracketsEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoBracketsEncoding.swift; sourceTree = "<group>"; };
 		457FE551229EC771000D6C52 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		457FE554229EC771000D6C52 /* CustomServerTrustPoliceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomServerTrustPoliceManager.swift; sourceTree = "<group>"; };
+		457FE55B229ECC5B000D6C52 /* APIManager+SearchCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+SearchCalls.swift"; sourceTree = "<group>"; };
+		457FE55E229ECE57000D6C52 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		6A93663A1E8345936B72D6FF /* Pods-LemiTravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemiTravelTests.release.xcconfig"; path = "Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests.release.xcconfig"; sourceTree = "<group>"; };
 		B48B09DC9888DF50A1333A7D /* Pods-LemiTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LemiTravelTests.debug.xcconfig"; path = "Target Support Files/Pods-LemiTravelTests/Pods-LemiTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5980DF5D8A19AFBAB010209 /* Pods_LemiTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LemiTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				457FE549229EC6B4000D6C52 /* Core */,
+				457FE55D229ECE4B000D6C52 /* Search */,
 				457FE546229EC646000D6C52 /* StubbedResponses */,
 			);
 			path = Networking;
@@ -376,8 +381,17 @@
 			isa = PBXGroup;
 			children = (
 				457FE551229EC771000D6C52 /* APIManager.swift */,
+				457FE55B229ECC5B000D6C52 /* APIManager+SearchCalls.swift */,
 			);
 			path = APIManagers;
+			sourceTree = "<group>";
+		};
+		457FE55D229ECE4B000D6C52 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				457FE55E229ECE57000D6C52 /* SearchService.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		C9CFD247150046D068F50B70 /* Frameworks */ = {
@@ -607,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45461D92229CAF3900FB4DA6 /* ReachabilitySwift.swift in Sources */,
+				457FE55C229ECC5B000D6C52 /* APIManager+SearchCalls.swift in Sources */,
 				4529F5D9229C408A001AE1D7 /* AppDelegate.swift in Sources */,
 				457FE536229E8155000D6C52 /* CityTableViewCell.swift in Sources */,
 				457FE557229EC771000D6C52 /* APIManager.swift in Sources */,
@@ -632,6 +647,7 @@
 				45461DAF229D7A4100FB4DA6 /* City.swift in Sources */,
 				45461D9C229CB38100FB4DA6 /* ConstraintMaker+LemiTravel.swift in Sources */,
 				4529F613229C4799001AE1D7 /* BaseViewController.swift in Sources */,
+				457FE55F229ECE57000D6C52 /* SearchService.swift in Sources */,
 				45461DB2229D7CFD00FB4DA6 /* HomeTableViewCell.swift in Sources */,
 				45461D9E229D54CF00FB4DA6 /* UIButton+LemiTravel.swift in Sources */,
 			);

@@ -34,6 +34,10 @@ class CityListViewController: BaseViewController {
     private func setupBindings() {
         self.tableView.delegate = self.viewModel
         self.tableView.dataSource = self.viewModel
+        
+        self.viewModel.isSearching
+            .bind(to: self.tableView.rx.isHidden)
+            .disposed(by: self.disposeBag)
     }
     
     private func setupUI() {
@@ -41,6 +45,7 @@ class CityListViewController: BaseViewController {
             self.searchBar,
             self.button_Back,
             self.view_TopSeparator,
+            self.activityIndicator,
             self.tableView
         )
         
@@ -66,6 +71,10 @@ class CityListViewController: BaseViewController {
             $0.leading.trailing.bottom.equalToSuperview()
         }
 
+        self.activityIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+
     }
     
     // MARK: Overrides
@@ -88,5 +97,9 @@ extension CityListViewController: CityListDelegate {
     
     func goToHome() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func presentAlert(message: String, okayButtonTitle: String) {
+        self.alert(message: message, okayButtonTitle: okayButtonTitle)
     }
 }

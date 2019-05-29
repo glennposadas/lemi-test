@@ -17,7 +17,7 @@ class HomeTableViewCell: BaseTableViewCell {
     }()
     
     private lazy var label_Title: UILabel = {
-        return UILabel.new(withText: "Tap to select a city".localized(), fontSize: 15.0)
+        return UILabel.new(withText: "", fontSize: 15.0)
     }()
     
     // MARK: - Functions
@@ -29,6 +29,7 @@ class HomeTableViewCell: BaseTableViewCell {
             return
         }
         
+        self.label_Title.text = "Tap to select a city".localized()
         self.imageView_SelectIcon.alpha = 1.0
     }
     

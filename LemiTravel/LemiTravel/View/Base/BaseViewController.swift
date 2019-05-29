@@ -66,6 +66,23 @@ class BaseViewController: UIViewController {
     
     // MARK: - Functions
     
+    /**
+     Presents an alertController with completion.
+     - parameter message: The body of the alert, nullable, since we can just sometimes use the title parameter.
+     - parameter okButtonTitle: the title of the okay button.
+     */
+    func alert(message: String? = nil, okayButtonTitle: String) {
+        
+        let alertController = UIAlertController(title: "LemiTravel", message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: okayButtonTitle, style: .default) { _ in }
+        alertController.addAction(okAction)
+        
+        alertController.view.tintColor = .black
+        present(alertController, animated: true, completion: nil)
+    }
+
+    
     func layoutInternetConnectionObserverToast() {
         if let keyWindow = UIApplication.shared.keyWindow {
             if keyWindow.subviews.filter({ $0.tag == 9911 }).count == 0 {
