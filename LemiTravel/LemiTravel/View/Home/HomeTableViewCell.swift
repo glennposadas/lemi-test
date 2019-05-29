@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class HomeTableViewCell: BaseTableViewCell {
     
     // MARK: - Properties
     
@@ -25,7 +25,7 @@ class HomeTableViewCell: UITableViewCell {
     func setupCell(_ city: City?) {
         if let city = city {
             self.imageView_SelectIcon.alpha = 0
-            self.label_Title.text = "You selected: \(city.name ?? "Unknown name")"
+            self.label_Title.text = city.homeCellDescription
             return
         }
         

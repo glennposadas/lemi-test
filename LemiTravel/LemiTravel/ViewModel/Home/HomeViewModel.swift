@@ -28,23 +28,28 @@ class HomeViewModel: NSObject {
     
     // MARK: - Properties
     
-    weak var delegate: HomeDelegate?
+    let disposeBag = DisposeBag()
     
-    private var cities = [City]()
+    weak var delegate: HomeDelegate?
     
     // MARK: Functions
     
     /// init
     init(homeController: HomeDelegate?) {
+        super.init()
+        
         self.delegate = homeController
         
-        
+        LTSharedData.selectedCities.subscribe(onNext: { [weak self] cities in
+            guard let strongSelf = self else { return }
+            strongSelf.delegate?.reloadData()
+        }).disposed(by: self.disposeBag)
     }
     
     // MARK: Button Events
     
-    /// Selector for select city button
-    /// Update: button was changed to tableViewCell
+    /// Selector for select city button.
+    /// Update: button was changed to tableViewCell.
     func selectCity() {
         self.delegate?.showCityList()
     }
@@ -57,7 +62,14 @@ extension HomeViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        self.selectCity()
+        let section = indexPath.section
+        
+        if let homeSectionType = HomeSectionType(rawValue: section) {
+            switch homeSectionType {
+            case .selectCity: self.selectCity()
+            case .selectedCities: break
+            }
+        }
     }
 }
 
@@ -67,7 +79,7 @@ extension HomeViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: HomeTableViewCell?
         
-        cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell
+        cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
         
         if cell == nil {
             cell = HomeTableViewCell()
@@ -81,7 +93,7 @@ extension HomeViewModel: UITableViewDataSource {
             case .selectCity:
                 cell?.setupCell(nil)
             case .selectedCities:
-                cell?.setupCell(self.cities[row])
+                cell?.setupCell(LTSharedData.selectedCities.value[row])
             }
         }
         
@@ -92,7 +104,7 @@ extension HomeViewModel: UITableViewDataSource {
         if let homeSectionType = HomeSectionType(rawValue: section) {
             switch homeSectionType {
             case .selectCity: return 1
-            case .selectedCities: return self.cities.count
+            case .selectedCities: return LTSharedData.selectedCities.value.count
             }
         }
         

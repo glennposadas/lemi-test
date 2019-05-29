@@ -11,8 +11,8 @@ import UIKit
 /// Category for `UIImageView`.
 extension UIImageView {
     /// Generates new `UIImageView`.
-    class func new(withImageName imageName: String, contentMode: UIView.ContentMode = .scaleAspectFit) -> UIImageView {
-        let image = UIImage(named: imageName)
+    class func new(withImageName imageName: String?, contentMode: UIView.ContentMode = .scaleAspectFit) -> UIImageView {
+        let image = UIImage(named: imageName ?? "")
         let imageView = UIImageView(image: image)
         imageView.contentMode = contentMode
         return imageView

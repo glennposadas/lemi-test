@@ -83,6 +83,10 @@ class BaseViewController: UIViewController {
                     $0.center.equalToSuperview()
                 }
                 
+                self.imageView_SadFace.snp.makeConstraints {
+                    $0.width.height.equalTo(30.0)
+                }
+                
                 // The top extra view for iPhone X and similar phones.
                 let topView = UIView()
                 topView.backgroundColor = UIColor.colorWithRGBHex(0xc0392b)
@@ -153,7 +157,9 @@ class BaseViewController: UIViewController {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         // Register cells
-        self.tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
+        self.tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.identifier)
+        self.tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
+        self.tableView.register(CityTableViewCell.self, forCellReuseIdentifier: CityTableViewCell.identifier)
         
         let transluscentView = UIView()
         transluscentView.backgroundColor = .clear

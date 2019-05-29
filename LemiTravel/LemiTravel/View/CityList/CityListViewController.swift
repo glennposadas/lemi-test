@@ -6,11 +6,16 @@
 //  Copyright © 2019 Glenn Von C. Posadas. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
 class CityListViewController: BaseViewController {
 
     // MARK: - Properties
+    
+    private let disposeBag = DisposeBag()
+    private var viewModel: CityListViewModel!
 
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -27,14 +32,16 @@ class CityListViewController: BaseViewController {
     // MARK: - Functions
     
     private func setupBindings() {
-        
+        self.tableView.delegate = self.viewModel
+        self.tableView.dataSource = self.viewModel
     }
     
     private func setupUI() {
         self.view.addSubviews(
             self.searchBar,
             self.button_Back,
-            self.view_TopSeparator
+            self.view_TopSeparator,
+            self.tableView
         )
         
         self.searchBar.snp.makeConstraints {
@@ -54,6 +61,11 @@ class CityListViewController: BaseViewController {
             $0.top.equalTo(self.searchBar.snp.bottom)
         }
 
+        self.tableView.snp.makeConstraints {
+            $0.top.equalTo(self.view_TopSeparator.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+
     }
     
     // MARK: Overrides
@@ -61,7 +73,16 @@ class CityListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.viewModel = CityListViewModel(cityListController: self)
         self.setupUI()
         self.setupBindings()
+    }
+}
+
+// MARK: - CityListDelegate
+
+extension CityListViewController: CityListDelegate {
+    func reloadData() {
+        self.tableView.reloadData()
     }
 }
