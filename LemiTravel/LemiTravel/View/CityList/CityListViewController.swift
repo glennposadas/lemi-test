@@ -38,6 +38,13 @@ class CityListViewController: BaseViewController {
         self.viewModel.isSearching
             .bind(to: self.tableView.rx.isHidden)
             .disposed(by: self.disposeBag)
+        
+        self.searchBar.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .debounce(0.5, scheduler: MainScheduler.instance)
+            .bind(to: self.viewModel.searchQuery)
+            .disposed(by: self.disposeBag)
     }
     
     private func setupUI() {

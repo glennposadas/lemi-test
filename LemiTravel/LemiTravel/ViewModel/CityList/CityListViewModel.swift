@@ -22,23 +22,39 @@ class CityListViewModel: NSObject {
     
     // MARK: - Properties
     
+    private let disposeBag = DisposeBag()
+    
     weak var delegate: CityListDelegate?
     
     var isSearching = BehaviorRelay<Bool>(value: true)
     var cities = BehaviorRelay<[City]>(value: [])
+    var lastSearchQuery = BehaviorRelay<String>(value: ".....")
+    var searchQuery = BehaviorRelay<String>(value: "")
     
     // MARK: Functions
     
     /// Start searching
     private func search(_ query: String) {
+        if query == self.lastSearchQuery.value {
+            return
+        }
+        
+        print("Searching... \(query) ✍🏻")
+        
+        self.lastSearchQuery.accept(query)
         self.isSearching.accept(true)
+        
         APIManager.SearchCalls.search(query, onSuccess: { (newCities) in
+            self.lastSearchQuery.accept(".....")
             self.isSearching.accept(false)
+            
             if let newCities = newCities {
                 self.cities.accept(newCities)
                 self.delegate?.reloadData()
             }
         }, onError: { errorMessage, _, _ in
+            self.isSearching.accept(false)
+            self.lastSearchQuery.accept(".....")
             self.delegate?.presentAlert(message: errorMessage, okayButtonTitle: "OK")
         })
     }
@@ -49,6 +65,11 @@ class CityListViewModel: NSObject {
         
         self.delegate = cityListController
         self.search("")
+        
+        self.searchQuery.subscribe(onNext: { [weak self] newQuery in
+            guard let strongSelf = self else { return }
+            strongSelf.search(newQuery)
+        }).disposed(by: self.disposeBag)
     }
 }
 
