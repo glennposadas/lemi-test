@@ -11,12 +11,16 @@ import UIKit
 class CityListViewController: BaseViewController {
 
     // MARK: - Properties
-    
-    private lazy var view_NavBar: UIView = {
-        return UIView.new(backgroundColor: .white)
+
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search for a city".localized()
+        searchBar.setPositionAdjustment(UIOffset(horizontal: 35.0, vertical: 0), for: .search)
+        searchBar.backgroundImage = UIImage()
+        return searchBar
     }()
     
-    private lazy var view_NavBarSeparator: UIView = {
+    private lazy var view_TopSeparator: UIView = {
         return UIView.new(backgroundColor: .lightGray)
     }()
     
@@ -27,13 +31,29 @@ class CityListViewController: BaseViewController {
     }
     
     private func setupUI() {
-        //self.view_NavBar.addSubviews(<#T##views: UIView...##UIView#>)
+        self.view.addSubviews(
+            self.searchBar,
+            self.button_Back,
+            self.view_TopSeparator
+        )
         
-        let backBarButton = UIBarButtonItem(customView: self.button_Back)
-        self.button_Back.frame = CGRect(x: 0, y: 0, width: 44.0, height: 44.0)
-        self.navigationItem.leftBarButtonItem = backBarButton
+        self.searchBar.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+        }
         
-        self.button_Back.setImage(UIImage(named: "ic_back"), for: .normal)
+        self.button_Back.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(8.0)
+            $0.centerY.equalTo(self.searchBar)
+            $0.width.height.equalTo(44.0)
+        }
+
+        self.view_TopSeparator.snp.makeConstraints {
+            $0.height.equalTo(1.0)
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(self.searchBar.snp.bottom)
+        }
+
     }
     
     // MARK: Overrides
