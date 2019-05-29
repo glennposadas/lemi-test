@@ -14,9 +14,14 @@ class HomeViewModelSpec: QuickSpec {
     /// Mock class conforming to ```HomeDelegate```
     class TestHomeDelegate: NSObject, HomeDelegate {
         var showCityListWasCalled = false
+        var reloadDataWasCalled = false
         
         func showCityList() {
             self.showCityListWasCalled = true
+        }
+        
+        func reloadData() {
+            self.reloadDataWasCalled = true
         }
     }
     
@@ -42,7 +47,23 @@ class HomeViewModelSpec: QuickSpec {
                     viewModel?.selectCity()
                     
                     // Assert
-                    expect(homeDelegate?.showCityListWasCalled).to(equal(true))
+                    expect {
+                        homeDelegate?.showCityListWasCalled
+                        }.to(equal(true))
+                }
+                
+                it("tests the obserrvation of the viewModel to the shared data selected cities") {
+                    expect {
+                        LTSharedData.selectedCities.value.count
+                        }.to(equal(0))
+                    
+                    let data = stubbedResponse("Cities")!
+                    let newCities = try! JSONDecoder().decode([City].self, from: data)
+                    LTSharedData.selectedCities.accept(LTSharedData.selectedCities.value + newCities)
+                    
+                    expect {
+                        homeDelegate?.reloadDataWasCalled
+                    }.to(equal(true))
                 }
             }
         }
