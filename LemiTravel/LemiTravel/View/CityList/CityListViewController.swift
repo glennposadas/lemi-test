@@ -58,11 +58,11 @@ class CityListViewController: BaseViewController {
         
         self.searchBar.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
         }
         
         self.button_Back.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(8.0)
+            $0.leading.equalTo(self.view.safeAreaLayoutGuide).offset(8.0)
             $0.centerY.equalTo(self.searchBar)
             $0.width.height.equalTo(44.0)
         }
@@ -75,7 +75,7 @@ class CityListViewController: BaseViewController {
 
         self.tableView.snp.makeConstraints {
             $0.top.equalTo(self.view_TopSeparator.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
 
         self.activityIndicator.snp.makeConstraints {

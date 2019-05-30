@@ -27,8 +27,8 @@ class HomeViewController: BaseViewController {
     private func setupUI() {
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(44.0)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(16.0)
+            $0.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
 
     }
